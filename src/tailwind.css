@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Roboto", ui-sans-serif, system-ui, -apple-system,
+               "Segoe UI", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+
+  --color-background-light: rgb(50, 50, 57);
+  --color-background-dark: rgb(26, 26, 31);
+  --color-text: #fff      /* default text */
+
+
+}
+
+
+html, body { height: 100%; }
+
+body { 
+  @apply text-text antialiased;
+  background: radial-gradient(ellipse at center, var(--color-background-light), var(--color-background-dark));
+}
