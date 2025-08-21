@@ -1,0 +1,26 @@
+  <div
+    class="relative mx-auto w-auto h-10 rounded-full button-background backdrop-blur
+          shadow-inner flex items-center select-none"
+  >
+    <div class="relative w-auto">
+      <div class="absolute inset-y-0 rounded-full bg-white transition-all duration-300 ease-in-out"
+        [style.width.px]="getButtonWidth(selectedLabel === labelLeft ? leftButton : rightButton)"
+        [style.transform]="selectedLabel === labelRight ? `translateX(${getButtonWidth(leftButton)}px)` : `translateX(0px)`">
+    </div>
+
+      <button
+        #leftButton
+        class="relative p-2 px-5 rounded-full font-bold z-20 hover:cursor-pointer"
+        [class.button-text-color]="selectedLabel === labelLeft"
+        [class.text-white]="selectedLabel === labelRight"
+        (click)="handleSelectedLabel(labelLeft)"
+      >{{labelLeft}}</button>
+      <button 
+        #rightButton
+        class="relative p-2 px-5 rounded-full font-bold z-20 hover:cursor-pointer" 
+        [class.button-text-color]="selectedLabel === labelRight"
+        [class.text-white]="selectedLabel === labelLeft"
+        (click)="handleSelectedLabel(labelRight)"
+      >{{labelRight}}</button>
+    </div>
+  </div>

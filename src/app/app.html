@@ -7,8 +7,10 @@
 </div>
 
 <div class="flex justify-center mt-4">
-  <div class="flex gap-2">
-    <button class="p-2 bg-gray-700" (click)="updateChartType('LINE')">LINE</button>
-    <button class="p-2 bg-gray-700" (click)="updateChartType('COLUMN')">COLUMN</button>
-  </div>
+  <app-slide-button
+    [labelLeft]="'LINE'"
+    [labelRight]="'COLUMN'"
+    [selectedLabel]="chartType"
+    (selectedLabelChange)="handleTypeChange($event)"
+  ></app-slide-button>
 </div>
